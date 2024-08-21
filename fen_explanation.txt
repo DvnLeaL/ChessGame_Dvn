@@ -1,0 +1,129 @@
+FEN (Forsyth-Edwards Notation) is a standard notation used to represent a specific chessboard position. It provides a concise and human-readable way to describe the placement of chess pieces on the board, along with other important details such as whose turn it is to move, castling rights, en passant availability, and the state of the game.
+
+A FEN string consists of six fields separated by spaces:
+
+1. Piece Placement (8 ranks): This field represents the positions of the pieces on the board, starting from the 8th rank (top) to the 1st rank (bottom). Each rank is described by a series of characters:
+   - Uppercase letters represent white pieces:
+     - `K` represents the white king.
+     - `Q` represents the white queen.
+     - `R` represents the white rook.
+     - `B` represents the white bishop.
+     - `N` represents the white knight.
+     - `P` represents the white pawn.
+   - Lowercase letters represent black pieces:
+     - `k` represents the black king.
+     - `q` represents the black queen.
+     - `r` represents the black rook.
+     - `b` represents the black bishop.
+     - `n` represents the black knight.
+     - `p` represents the black pawn.
+   - Digits from `1` to `8` represent the number of consecutive empty squares on that rank.
+
+   Each rank is separated by a `/` character. For example, the FEN string `rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR` represents the starting position of a chess game.
+
+2. Active Color (1 character): This field indicates whose turn it is to move. The character `w` indicates it is white's turn to move, while `b` indicates it is black's turn.
+
+3. Castling Availability (1-4 characters): This field indicates which side has castling rights:
+   - `K` means white can castle kingside.
+   - `Q` means white can castle queenside.
+   - `k` means black can castle kingside.
+   - `q` means black can castle queenside.
+   - A `-` indicates that neither side can castle.
+
+4. En Passant Target Square (1-2 characters): This field shows the square where an en passant capture is possible. If a pawn has just moved two squares forward, this field will show the square behind that pawn (where an opposing pawn could potentially capture it en passant). If there is no en passant move available, this field is represented as `-`.
+
+5. Halfmove Clock (1-2 characters): This field keeps track of the number of half-moves (plies) since the last pawn advance or capture. This is used for the fifty-move rule, where a player can claim a draw if no pawn has moved and no capture has been made in the last fifty moves.
+
+6. Fullmove Number (1-2 characters): This field counts the number of full moves in the game. It starts at 1 and is incremented after black's move.
+
+ Example FEN String
+
+Here’s an example of a FEN string:
+
+`rnbqkbnr/ppp1pppp/5n2/3p4/8/4P3/PPP2PPP/RNBQKBNR w KQkq - 0 4`
+
+This FEN represents the following position:
+- The piece placement on the board is as described in the string.
+- It is white's turn to move (`w`).
+- Both sides still have the possibility to castle kingside and queenside (`KQkq`).
+- There is no en passant target square (`-`).
+- The halfmove clock is at 0, meaning there have been no moves since the last pawn advance or capture.
+- The fullmove number is 4, indicating that three full moves have been completed, and this is the fourth move.
+
+ Usage
+
+FEN notation is widely used in chess software for recording, analyzing, and setting up specific positions on a chessboard. It is an essential tool for chess players and developers working with chess engines or databases, as it allows precise documentation and communication of any position in a chess game.
+
+----------------------------------------------------------------------------------------------------------
+
+ Versi Indonesia
+
+FEN (Forsyth-Edwards Notation) adalah notasi standar yang digunakan untuk merepresentasikan posisi papan catur tertentu. FEN menyediakan cara yang ringkas dan mudah dibaca untuk menggambarkan penempatan buah catur di papan, bersama dengan detail penting lainnya seperti giliran siapa yang akan bergerak, hak rokade, kemungkinan en passant, dan status permainan.
+
+String FEN terdiri dari enam bidang yang dipisahkan oleh spasi:
+
+1. Penempatan Buah Catur (8 baris): Bidang ini mewakili posisi buah catur di papan, dimulai dari baris ke-8 (atas) hingga baris ke-1 (bawah). Setiap baris digambarkan dengan serangkaian karakter:
+   - Huruf besar mewakili buah catur putih:
+     - `K` untuk raja putih.
+     - `Q` untuk ratu putih.
+     - `R` untuk benteng putih.
+     - `B` untuk gajah putih.
+     - `N` untuk kuda putih.
+     - `P` untuk pion putih.
+   - Huruf kecil mewakili buah catur hitam:
+     - `k` untuk raja hitam.
+     - `q` untuk ratu hitam.
+     - `r` untuk benteng hitam.
+     - `b` untuk gajah hitam.
+     - `n` untuk kuda hitam.
+     - `p` untuk pion hitam.
+   - Angka dari `1` hingga `8` menunjukkan jumlah kotak kosong berturut-turut pada baris tersebut.
+
+   Setiap baris dipisahkan oleh karakter `/`. Misalnya, string FEN `rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR` mewakili posisi awal dalam permainan catur.
+
+2. Warna yang Aktif (1 karakter): Bidang ini menunjukkan giliran siapa yang akan bergerak. Karakter `w` menunjukkan giliran putih untuk bergerak, sedangkan `b` menunjukkan giliran hitam.
+
+3. Ketersediaan Rokade (1-4 karakter): Bidang ini menunjukkan sisi mana yang masih memiliki hak untuk rokade:
+   - `K` berarti putih bisa rokade ke sayap raja.
+   - `Q` berarti putih bisa rokade ke sayap ratu.
+   - `k` berarti hitam bisa rokade ke sayap raja.
+   - `q` berarti hitam bisa rokade ke sayap ratu.
+   - Tanda `-` menunjukkan bahwa tidak ada rokade yang mungkin dilakukan.
+
+4. Kotak Sasaran En Passant (1-2 karakter): Bidang ini menunjukkan kotak tempat en passant bisa dilakukan. Jika pion baru saja bergerak dua kotak ke depan, bidang ini akan menunjukkan kotak di belakang pion tersebut (di mana pion lawan dapat melakukan en passant). Jika tidak ada gerakan en passant yang mungkin, bidang ini ditandai dengan `-`.
+
+5. Jam Setengah Langkah (1-2 karakter): Bidang ini mencatat jumlah setengah langkah (ply) sejak terakhir kali pion bergerak atau ada tangkapan. Ini digunakan untuk aturan lima puluh langkah, di mana pemain dapat mengklaim remis jika tidak ada pion yang bergerak dan tidak ada tangkapan yang dilakukan dalam lima puluh langkah terakhir.
+
+6. Nomor Langkah Penuh (1-2 karakter): Bidang ini menghitung jumlah langkah penuh dalam permainan. Dimulai dari 1 dan bertambah setelah giliran hitam.
+
+ Contoh String FEN
+
+Berikut adalah contoh string FEN:
+
+`rnbqkbnr/ppp1pppp/5n2/3p4/8/4P3/PPP2PPP/RNBQKBNR w KQkq - 0 4`
+
+FEN ini mewakili posisi berikut:
+- Penempatan buah catur di papan sesuai dengan yang digambarkan dalam string.
+- Giliran putih untuk bergerak (`w`).
+- Kedua sisi masih memiliki kemungkinan untuk rokade ke sayap raja dan ratu (`KQkq`).
+- Tidak ada kotak sasaran en passant (`-`).
+- Jam setengah langkah berada di 0, yang berarti belum ada langkah sejak pion terakhir bergerak atau ada tangkapan.
+- Nomor langkah penuh adalah 4, menunjukkan bahwa tiga langkah penuh telah selesai, dan ini adalah langkah keempat.
+
+ Penggunaan
+
+Notasi FEN banyak digunakan dalam perangkat lunak catur untuk merekam, menganalisis, dan menyiapkan posisi tertentu di papan catur. Ini adalah alat penting bagi para pemain catur dan pengembang yang bekerja dengan mesin catur atau database, karena memungkinkan dokumentasi dan komunikasi yang tepat dari posisi apa pun dalam permainan catur.
+
+----------------------------------------------------------------------------------------------------------
+
+FEN Games
+r1bq1rk1/ppp2ppp/2n2n2/3p4/2B1P3/2N2N2/PPP2PPP/R1BQ1RK1 w - - 0 1
+r2q1rk1/pp1nppbp/2p1bnp1/3P4/3Q4/2N2N2/PPP2PPP/R1B1R1K1 w - - 0 1
+rnbq1rk1/pppp1ppp/4pn2/3P4/2B1P3/5N2/PPP2PPP/RN1Q1RK1 w - - 0 1
+r1bq1rk1/ppp2ppp/2n2n2/3p4/2B1P3/2N2N2/PPP2PPP/R1BQ1RK1 w - - 0 1
+r1bqkbnr/pppppppp/8/4P3/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 1
+r1bqkbnr/pppppppp/8/4P3/2P1N3/8/PPP2PPP/R1BQKBNR w - - 0 1
+r1bqkbnr/pppppppp/8/4P3/3N4/4P3/PPP2PPP/R1BQKBNR w KQkq - 0 1
+r1bq1rk1/ppp2ppp/2n2n2/3p4/2B1P3/5N2/PPP2PPP/R1BQ1RK1 w - - 0 1
+rnbq1rk1/pppppppp/4n3/3P4/3Q4/2N2N2/PPP2PPP/R1B1R1K1 w - - 0 1
+r1bq1rk1/ppp2ppp/2n2n2/3p4/2B1P3/2N2N2/PPP2PPP/R1BQ1RK1 w - - 0 1
