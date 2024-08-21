@@ -1,7 +1,7 @@
-Chess Game adalah aplikasi web sederhana yang memungkinkan Anda bermain catur langsung di browser. Website ini menggunakan Chessboard.js dan Chess.js untuk menyediakan antarmuka papan catur interaktif dan logika permainan catur.
+Chess Game is a simple web application that allows you to play chess directly in your browser. This website uses Chessboard.js and Chess.js to provide an interactive chessboard interface and chess game logic.
 
-Fitur:
-1. Papan Catur Interaktif: Papan catur yang dapat dipindahkan dan diputar dengan drag-and-drop.
-2. Gerakan Komputer: Komputer dapat membuat gerakan acak untuk meningkatkan tantangan.
-3. Sejarah Gerakan: Menampilkan riwayat gerakan yang dilakukan selama permainan.
-4. Reset dan Set Posisi: Tombol untuk memulai permainan baru atau mengatur posisi papan berdasarkan notasi FEN.
+Features:
+1. Interactive Chessboard: A chessboard that can be moved and rotated using drag-and-drop.
+2. Computer Moves: The computer can make random moves to increase the challenge.
+3. Move History: Displays the history of moves made during the game.
+4. Reset and Set Position: Buttons to start a new game or set the board position based on FEN notation.
